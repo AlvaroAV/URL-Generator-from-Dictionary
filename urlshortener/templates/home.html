@@ -1,0 +1,33 @@
+{% load i18n %}
+<div style="text-align: center;">
+    <h1>URL Shortener</h1>
+    <div>        
+        {% if  error  %}
+            <div>
+                <h1>Error</h1>
+                <p id="error">{{error}}</p>
+            </div>
+        {% elif success %}
+            <div>
+                <h1>Success !</h1>
+                <h4>The URL has been created !</h4>
+            </div>
+        {% else %}
+            <form action="{% url 'home' %}" method="post">{% csrf_token %}
+                
+                <p><label>{% trans "Enter your URL" %}:&nbsp;</label>{{ form.original_url }}<span class="required_field">*</span></p>
+                {% if form.original_url.errors %}
+                  <p class="form-error-msg">{{ form.original_url.errors.as_text }}</p>
+                {% endif %} 
+
+                <div style="text-align: center;">
+                    <input type="submit" class="btn btn-success" value="{% trans "Short URL!" %}"/>
+                </div>
+
+                <br />
+                <span style="font-size: small; color:gray;">{% trans "Fields with * are required" %}</span>
+                
+            </form>
+        {% endif %}
+    </div>
+</div>
