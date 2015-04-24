@@ -2,7 +2,7 @@
 
 This is a small Django 1.6 example project. This is a project to generate short URL's based in a words.txt file. 
 
-If your url is like `http://www.verybigurl.com/**dog**/post/7/whatever` and there is a word **dog** in the words.txt file, the new url will be `http://www.yourproject.com/**dog**`
+If your url is like *http://www.verybigurl.com/**dog**/post/7/whatever* and there is a word **dog** in the words.txt file, the new url will be `http://www.yourproject.com/**dog**`
 
 So, if the original URL contains a word that exists in the wordlist.txt file, it will use that word to generate the new URL.
 
