@@ -1,4 +1,4 @@
-#Short URL Generator from words in Dictionary
+#URL Generator from Dictionary
 
 This is a small Django 1.6 example project. This is a project to generate short URL's based in a words.txt file. 
 
